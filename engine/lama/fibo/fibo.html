@@ -1,0 +1,235 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<style>
+@font-face{font-family:Anton;src:url("file:///usr/share/fonts/truetype/google-fonts/ofl/anton/Anton-Regular.ttf")}
+@font-face{font-family:Pop;font-weight:500;src:url("file:///usr/share/fonts/truetype/google-fonts/Poppins-Medium.ttf")}
+@font-face{font-family:Pop;font-weight:700;src:url("file:///usr/share/fonts/truetype/google-fonts/Poppins-Bold.ttf")}
+:root{--gold:#E7CE7C;--red:#E0465A;--ink:#F4F1E8;--mute:#9AA6BF;--navy:#0F1B33}
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:1080px;height:1920px;overflow:hidden;background:#05080F}
+#world{position:absolute;inset:0}
+#bg{position:absolute;inset:-100px;background:radial-gradient(1000px 1000px at 50% 40%,#1A2A4E 0%,#0C1528 50%,#05080F 100%)}
+#floor{position:absolute;left:-600px;right:-600px;top:1180px;height:1400px;transform-origin:50% 0;transform:perspective(700px) rotateX(72deg);
+  background-image:linear-gradient(rgba(231,206,124,.35) 2px,transparent 2px),linear-gradient(90deg,rgba(231,206,124,.35) 2px,transparent 2px);background-size:120px 120px;opacity:.35;
+  -webkit-mask-image:linear-gradient(to bottom,transparent 0%,#000 25%,#000 70%,transparent 100%)}
+#dust{position:absolute;inset:0;pointer-events:none}
+#dust i{position:absolute;border-radius:50%;background:#F3DE95;box-shadow:0 0 12px #E7CE7C}
+#cam{position:absolute;inset:0;transform-origin:50% 45%}
+.sc{position:absolute;inset:0;opacity:0}
+#flash{position:absolute;inset:0;opacity:0;mix-blend-mode:screen}
+#vig{position:absolute;inset:0;background:radial-gradient(ellipse 85% 70% at 50% 42%,transparent 60%,rgba(0,0,0,.72))}
+#bars{position:absolute;inset:0;pointer-events:none}
+#top{position:absolute;left:90px;right:90px;top:120px;display:flex;justify-content:space-between;font-family:Anton;font-size:46px;letter-spacing:3px;color:var(--gold)}
+#top b{font-family:Pop;font-weight:700;font-size:26px;color:var(--navy);background:var(--gold);border-radius:999px;padding:6px 20px;letter-spacing:3px}
+#prog{position:absolute;left:90px;right:90px;top:92px;height:6px;border-radius:3px;background:rgba(231,206,124,.18)}
+#prog i{display:block;height:100%;width:0;background:var(--gold);border-radius:3px;box-shadow:0 0 14px #E7CE7C}
+.c{position:absolute;left:50px;right:50px;text-align:center}
+.A{font-family:Anton;text-transform:uppercase;line-height:1}
+.k{font-family:Pop;font-weight:700;letter-spacing:6px;color:var(--mute);text-transform:uppercase}
+.shine{background:linear-gradient(100deg,#B8953D 0%,#E7CE7C 30%,#FFF6D6 48%,#E7CE7C 62%,#B8953D 100%);background-size:300% 100%;-webkit-background-clip:text;background-clip:text;color:transparent}
+.w{color:var(--ink)} .r{color:var(--red)} .g{color:var(--gold)}
+.word{display:inline-block;margin:0 14px}
+.pill{display:inline-flex;align-items:center;gap:22px;background:var(--gold);color:var(--navy);border-radius:999px;padding:20px 50px;font-family:Anton;font-size:80px;position:relative;overflow:hidden}
+.pill .sw{position:absolute;top:-20%;bottom:-20%;width:120px;background:linear-gradient(90deg,transparent,rgba(255,255,255,.85),transparent);transform:skewX(-20deg)}
+#plane{position:absolute;left:90px;top:330px;width:900px;height:860px;transform-style:preserve-3d}
+#plane svg{position:absolute;inset:0;overflow:visible}
+#cap{position:absolute;left:50px;right:50px;top:1345px;text-align:center;font-family:Anton;font-size:100px;line-height:1.05;color:#fff;text-transform:uppercase;text-shadow:0 8px 0 rgba(0,0,0,.55)}
+#cap span{display:inline-block;margin:0 12px}
+#cap .on{color:var(--navy);background:var(--gold);padding:0 16px;border-radius:14px;box-shadow:0 0 30px rgba(231,206,124,.6)}
+.step{display:flex;align-items:center;gap:26px;margin-bottom:18px;background:rgba(255,255,255,.05);border-radius:24px;padding:18px 26px}
+.step b{font-family:Anton;font-size:64px;color:var(--navy);background:var(--gold);border-radius:18px;min-width:84px;text-align:center}
+.step span{font-family:Pop;font-weight:700;font-size:38px;color:var(--ink);line-height:1.25}
+</style></head><body>
+<div id="world">
+<div id="bg"></div><div id="floor"></div><div id="dust"></div>
+<div id="cam">
+  <!-- HOOK -->
+  <div class="sc" id="hook">
+    <div class="c A w" style="top:330px;font-size:100px" id="hw"></div>
+    <div class="c A shine" style="top:470px;font-size:400px" id="h61">61.8</div>
+    <svg id="hsvg" style="position:absolute;left:0;top:0;width:1080px;height:1920px;overflow:visible" viewBox="0 0 1080 1920"></svg>
+    <div class="c A r" style="top:1150px;font-size:140px;white-space:nowrap" id="hsl">SL kena sapu</div>
+  </div>
+  <!-- ZON -->
+  <div class="sc" id="zon">
+    <div class="c A w" style="top:420px;font-size:150px" id="z1">Aku tunggu</div>
+    <div class="c A shine" style="top:590px;font-size:260px;white-space:nowrap" id="z2">Zon lain</div>
+    <div style="position:absolute;left:90px;right:90px;top:900px;height:90px;border-radius:20px;background:linear-gradient(90deg,rgba(231,206,124,.15),rgba(231,206,124,.45),rgba(231,206,124,.15));border:4px solid var(--gold)" id="zb"></div>
+    <div class="c" style="top:1080px" id="z3"><span class="pill"><svg width="56" height="70" viewBox="0 0 24 30"><path d="M3 2h18v26l-9-6-9 6z" fill="#0F1B33"/></svg>SAVE VIDEO NI<i class="sw"></i></span></div>
+  </div>
+  <!-- FIBO (carta 3D) -->
+  <div class="sc" id="fib">
+    <div class="c k" style="top:228px;font-size:36px;color:var(--gold)" id="ftag">XAUUSD · Pullback</div>
+    <div id="plane"><svg id="fsvg" viewBox="0 0 900 860"></svg></div>
+    <div class="c A" style="top:520px;font-size:330px" id="big786"><span class="shine">78.6</span></div>
+    <div class="c A" style="top:520px;font-size:380px" id="big90"><span class="shine">90</span></div>
+    <div class="c" style="top:1170px" id="zent"><span class="A shine" style="font-size:130px;white-space:nowrap">Zon entry aku</span></div>
+    <div class="c" style="top:1180px" id="nostop"><span style="display:inline-block;font-family:Anton;font-size:110px;color:var(--red);border:10px solid var(--red);border-radius:26px;padding:0 36px;background:rgba(5,8,15,.75);transform:rotate(-6deg)">TAK TERUS MASUK</span></div>
+  </div>
+  <!-- M1 -->
+  <div class="sc" id="m1">
+    <div style="position:absolute;left:0;right:0;top:420px;height:760px;background:linear-gradient(180deg,rgba(231,206,124,.08),rgba(231,206,124,.22),rgba(231,206,124,.08));border-top:5px solid var(--gold);border-bottom:5px solid var(--gold)" id="mzone"></div>
+    <div style="position:absolute;left:90px;top:372px;font-family:Anton;font-size:44px;color:var(--gold)">78.6</div>
+    <div style="position:absolute;left:90px;top:1188px;font-family:Anton;font-size:44px;color:var(--gold)">90</div>
+    <div class="c" style="top:230px" id="m1b"><span style="display:inline-block;font-family:Anton;font-size:120px;color:var(--navy);background:var(--gold);border-radius:24px;padding:0 40px;box-shadow:0 0 60px rgba(231,206,124,.6)">M1</span></div>
+    <svg id="msvg" style="position:absolute;left:90px;top:420px;width:900px;height:760px;overflow:visible" viewBox="0 0 900 760"></svg>
+  </div>
+  <!-- RULE -->
+  <div class="sc" id="rule">
+    <div class="c A w" style="top:500px;font-size:150px" id="r1">Tak ada<br>engulfing</div>
+    <div class="c A r" style="top:880px;font-size:165px;white-space:nowrap" id="r2">Tak ada entry</div>
+  </div>
+  <!-- OUTRO -->
+  <div class="sc" id="fin">
+    <div class="c" style="top:220px" id="o0"><span class="pill" style="font-size:56px;padding:12px 38px"><svg width="40" height="50" viewBox="0 0 24 30"><path d="M3 2h18v26l-9-6-9 6z" fill="#0F1B33"/></svg>ZON FIBO MAZA<i class="sw"></i></span></div>
+    <svg id="osvg" style="position:absolute;left:90px;top:340px;width:900px;height:430px" viewBox="0 0 900 430"></svg>
+    <div style="position:absolute;left:90px;right:90px;top:800px" id="steps">
+      <div class="step" id="st0"><b>1</b><span>Tarik Fibo pada swing</span></div>
+      <div class="step" id="st1"><b>2</b><span>Tunggu harga masuk zon 78.6 – 90</span></div>
+      <div class="step" id="st2"><b>3</b><span>Entry hanya lepas M1 engulfing</span></div>
+    </div>
+    <div class="c" style="top:1225px;display:flex;justify-content:center;align-items:center;gap:26px" id="sig">
+      <span class="A shine" style="font-size:96px">MR MAZA</span>
+      <span style="font-family:Pop;font-weight:700;font-size:38px;color:var(--navy);background:var(--gold);border-radius:999px;padding:12px 30px">@asyraf_maza</span></div>
+  </div>
+</div>
+</div>
+<div id="flash"></div><div id="vig"></div>
+<svg id="bars" viewBox="0 0 1080 1920"></svg>
+<div id="prog"><i></i></div>
+<div id="top">MR MAZA<b>XAUUSD</b></div>
+<div id="cap"></div>
+<script>
+const cl=(x,a=0,b=1)=>Math.max(a,Math.min(b,x)),ease=p=>1-Math.pow(1-cl(p),3),eio=p=>{p=cl(p);return p<.5?4*p*p*p:1-Math.pow(-2*p+2,3)/2},back=p=>{p=cl(p);const c=1.9;return 1+(c+1)*Math.pow(p-1,3)+c*Math.pow(p-1,2)},lerp=(a,b,p)=>a+(b-a)*p;
+const $=id=>document.getElementById(id);
+const GOLD="#E7CE7C",RED="#E0465A",INK="#F4F1E8",MUTE="#9AA6BF";
+let TL,P,HITS=[],FL=[],CUTS=[],GL=[];
+const S=i=>P[i].start,E=i=>P[i].end,W=(i,j)=>P[i].words[j][1];
+function rnd(i){const x=Math.sin(i*127.1+311.7)*43758.5453;return x-Math.floor(x)}
+// partikel letupan
+function burst(x,y,t0,t,n,col,spd=420,sz=10,dur=0.9){if(t<t0||t>t0+dur)return"";const p=(t-t0)/dur;let h="";
+  for(let i=0;i<n;i++){const a=rnd(i+x)*Math.PI*2,v=spd*(0.4+rnd(i*3+y)*0.8),px=x+Math.cos(a)*v*ease(p),py=y+Math.sin(a)*v*ease(p)+300*p*p;
+    h+=`<circle cx="${px}" cy="${py}" r="${sz*(1-p)}" fill="${col}" opacity="${1-p}"/>`}return h}
+function ring(x,y,t0,t,col,r1=260,dur=0.6,w=12){if(t<t0||t>t0+dur)return"";const p=(t-t0)/dur;return `<circle cx="${x}" cy="${y}" r="${20+r1*ease(p)}" fill="none" stroke="${col}" stroke-width="${w*(1-p)}" opacity="${1-p}"/>`}
+function txt(x,y,s,col,size=50,anchor="middle",op=1){return `<text x="${x}" y="${y}" fill="${col}" font-family="Anton" font-size="${size}" text-anchor="${anchor}" opacity="${op}">${s}</text>`}
+function glitch(el,t,hits){let g=0;hits.forEach(h=>{const d=t-h;if(d>=0&&d<0.45)g=Math.max(g,1-d/0.45)});
+  const dx=g*(10+14*rnd(Math.floor(t*30)));el.style.textShadow=g>0.02?`${dx}px 0 #ff2a55,${-dx}px 0 #22e1ff`:"none";
+  el.style.clipPath=g>0.5&&rnd(Math.floor(t*30)+7)>0.5?`inset(${rnd(Math.floor(t*30))*60}% 0 ${rnd(Math.floor(t*30)+1)*30}% 0)`:"none"}
+function shine(el,t,speed=0.5,off=0){const p=((t*speed+off)%1.6)/1.6;el.style.backgroundPosition=`${lerp(140,-40,p)}% 0`}
+function show(el,t0,t,mode="up",dur=0.3){const e=typeof el==="string"?$(el):el;if(t<t0){e.style.opacity=0;return}
+  if(mode==="pop"){const s=back((t-t0)/0.26);e.style.opacity=cl((t-t0)/0.07);e.style.transform=`scale(${2-s})`}
+  else if(mode==="fly"){const p=ease((t-t0)/0.45);e.style.opacity=cl((t-t0)/0.15);e.style.transform=`scale(${lerp(3.2,1,p)})`;e.style.filter=`blur(${(1-p)*14}px)`}
+  else{const p=ease((t-t0)/dur);e.style.opacity=p;e.style.transform=`translateY(${(1-p)*60}px)`}}
+function scene(id,a,b,t){const e=$(id);let o=0;if(t>=a&&t<b)o=Math.min(ease((t-a)/0.1),ease((b-t)/0.1));e.style.opacity=o;return o>0}
+// carta fibo
+const YH=110,YL=720,LV=[[.382,"38.2",MUTE],[.5,"50",MUTE],[.618,"61.8",RED],[.786,"78.6",GOLD],[.9,"90",GOLD]];
+const fy=r=>YH+r*(YL-YH);
+let IMP=[],PB=[];
+function poly(pts,t){let d="",head=pts[0];for(let i=0;i<pts.length;i++){const [x,y,tt]=pts[i];if(i===0){d="M"+x+" "+y;continue}const [px,py,pt]=pts[i-1];
+  if(t>=tt){d+=` L${x} ${y}`;head=[x,y]}else{if(t>pt){const p=(t-pt)/(tt-pt);head=[lerp(px,x,p),lerp(py,y,p)];d+=` L${head[0]} ${head[1]}`}break}}return{d,head}}
+function build(tl){TL=tl;P=tl.p;
+  let dh="";for(let i=0;i<46;i++){const s=2+rnd(i)*5;dh+=`<i style="width:${s}px;height:${s}px"></i>`}$("dust").innerHTML=dh;
+  const a=S(4),b=E(4);IMP=[[60,720,a],[150,580,lerp(a,b,.2)],[200,640,lerp(a,b,.35)],[300,420,lerp(a,b,.55)],[350,480,lerp(a,b,.68)],[450,190,lerp(a,b,.88)],[520,110,b]];
+  PB=[[520,110,S(6)],[565,250,S(6)+0.35],[600,205,S(6)+0.6],[650,400,S(6)+1.0],[690,360,S(6)+1.3],[735,500,E(6)-0.2],[765,465,S(8)],[805,630,W(9,1)],[835,655,S(10)],[870,520,S(10)+0.4],[900,330,E(10)]];
+  HITS=[W(0,4),W(1,4),W(1,5),S(2),W(2,2),S(3),W(5,1),W(9,0),S(10),S(12),S(13),S(15),S(16),S(17)+0.35,W(18,2),S(19),S(20),S(21),S(22)];
+  FL=[[W(0,4),"#E7CE7C",.35],[W(1,5),"#E0465A",.45],[W(9,0),"#E0465A",.35],[S(10),"#E7CE7C",.3],[S(17)+0.35,"#FFFFFF",.6],[W(18,2),"#E7CE7C",.45],[S(20),"#E0465A",.4]];
+  CUTS=[S(2),S(4),S(17)+0.35,S(19),S(21)];
+  return tl.total}
+function render(t){
+  $("prog").firstElementChild.style.width=cl(t/TL.total)*100+"%";
+  // persekitaran
+  $("floor").style.backgroundPosition=`0 ${t*90}px`;
+  document.querySelectorAll("#dust i").forEach((d,i)=>{const sp=10+rnd(i+5)*30;const x=(rnd(i)*1080+Math.sin(t*0.5+i)*30)%1080,y=((rnd(i+9)*1920-t*sp)%1920+1920)%1920;d.style.transform=`translate(${x}px,${y}px)`;d.style.opacity=0.25+0.5*rnd(i+2)*(0.6+0.4*Math.sin(t*2+i))});
+  // kamera: punch, gegar, whip
+  let punch=0,shake=0;HITS.forEach(h=>{const d=t-h;if(d>=0&&d<0.35){punch=Math.max(punch,(1-d/0.35)*0.06);shake=Math.max(shake,(1-d/0.28)*16)}});
+  let blur=0,whip=0;CUTS.forEach(c=>{const d=t-c;if(Math.abs(d)<0.14){const q=1-Math.abs(d)/0.14;blur=Math.max(blur,q*16);whip=d<0?-q*160:q*160}});
+  const cam=$("cam");cam.style.transform=`translate(${shake*Math.sin(t*90)+whip}px,${shake*Math.cos(t*77)}px) scale(${1+punch+0.01*Math.sin(t*0.7)})`;cam.style.filter=blur>0.5?`blur(${blur}px)`:"none";
+  let fo=0,fc="#E0465A";FL.forEach(([a,c,g])=>{const d=t-a;if(d>=0&&d<0.4&&(1-d/0.4)*g>fo){fo=(1-d/0.4)*g;fc=c}});$("flash").style.opacity=fo;$("flash").style.background=fc;
+  // jalur cahaya diagonal semasa potongan
+  let bh="";CUTS.forEach(c=>{const d=t-c;if(d>-0.15&&d<0.25){const p=(d+0.15)/0.4;const x=lerp(-600,1700,ease(p));bh+=`<polygon points="${x},0 ${x+140},0 ${x-560},1920 ${x-700},1920" fill="${GOLD}" opacity="${0.55*(1-Math.abs(p-0.5)*2)}"/>`}});$("bars").innerHTML=bh;
+  // ===== HOOK
+  if(scene("hook",0,S(2)-0.02,t)){
+    const ws=P[0].words.slice(0,4);$("hw").innerHTML=ws.map(([w,a])=>{if(t<a)return"";const s=back((t-a)/0.2);return `<span class="word" style="transform:scale(${1.6-0.6*s});opacity:${cl((t-a)/0.06)}">${w}</span>`}).join("");
+    const h=$("h61");show(h,W(0,4),t,"pop");shine(h,t,0.9);glitch(h,t,[W(0,4),W(1,5)]);
+    if(t>=S(1)){const p=ease((t-S(1))/0.35);h.style.transform=`translateY(${-p*150}px) scale(${1-0.35*p})`;$("hw").style.opacity=1-p}else $("hw").style.opacity=1;
+    // tag SL dan tetakan ekor
+    let sv="";const cut=W(1,5);
+    for(let i=0;i<7;i++){const x=150+i*130,y=1000+(i%2)*40,a=S(1)+0.1+i*0.07;if(t<a)continue;
+      if(t<cut){const s=back((t-a)/0.2);sv+=`<g transform="translate(${x} ${y}) scale(${2-s})"><rect x="-52" y="-34" width="104" height="68" rx="14" fill="rgba(224,70,90,.18)" stroke="${RED}" stroke-width="5"/>${txt(0,20,"SL",RED,52)}</g>`}
+      else sv+=burst(x,y,cut+i*0.03,t,10,RED,360,9,0.8)}
+    if(t>=cut-0.2&&t<cut+0.5){const p=ease((t-(cut-0.2))/0.25),o=1-cl((t-cut)/0.5);sv+=`<line x1="${lerp(60,1020,p)}" y1="${lerp(870,1150,p)}" x2="60" y2="870" stroke="#fff" stroke-width="${10*o}" opacity="${o}" stroke-linecap="round"/>`}
+    sv+=ring(540,1010,cut,t,RED,500,0.7,16);$("hsvg").innerHTML=sv;
+    const sl=$("hsl");show(sl,W(1,4),t,"pop");glitch(sl,t,[W(1,4),cut]);}
+  // ===== ZON
+  if(scene("zon",S(2)-0.02,S(4)-0.02,t)){show("z1",S(2),t,"pop");const z2=$("z2");show(z2,W(2,2),t,"fly");shine(z2,t,0.8);
+    const zb=$("zb");const q=ease((t-W(2,2))/0.5);zb.style.opacity=q;zb.style.transform=`scaleX(${q})`;zb.style.boxShadow=`0 0 ${40+30*Math.sin(t*6)}px rgba(231,206,124,.6)`;
+    show("z3",S(3),t,"pop");$("z3").querySelector(".sw").style.left=`${lerp(-30,130,cl((t-S(3)-0.2)/0.6))}%`;}
+  // ===== FIBO 3D
+  if(scene("fib",S(4)-0.02,S(17)+0.35,t)){show("ftag",S(4),t);
+    // kamera 3D: condong + orbit, zoom ke zon semasa p11-p15, menjunam masuk pada p17
+    const zin=eio((t-S(11))/1.2)*(1-eio((t-S(16))/0.6)),dive=eio((t-S(17))/0.35);
+    const sc=1.12+0.5*zin+6*dive,ty=-90*zin-420*dive,ry=Math.sin(t*0.45)*7*(1-zin),rx=16*(1-zin)+4;
+    $("plane").style.transform=`perspective(1500px) translateY(${ty}px) scale(${sc}) rotateX(${rx}deg) rotateY(${ry}deg)`;
+    $("plane").style.filter=dive>0.05?`blur(${dive*20}px)`:"none";
+    let h=`<defs><linearGradient id="zg" x1="0" x2="1"><stop offset="0" stop-color="${GOLD}" stop-opacity=".05"/><stop offset=".5" stop-color="${GOLD}" stop-opacity=".65"/><stop offset="1" stop-color="${GOLD}" stop-opacity=".05"/></linearGradient><filter id="gw"><feGaussianBlur stdDeviation="6" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>`;
+    // zon 78.6-90
+    const zv=ease((t-S(11))/0.5);if(zv>0){const pulse=0.7+0.3*Math.sin(t*7);h+=`<rect x="0" y="${fy(.786)}" width="${900*zv}" height="${fy(.9)-fy(.786)}" fill="url(#zg)" opacity="${pulse}"/>`}
+    // tool fibo
+    const da=W(5,1),db=E(5);
+    if(t>=da){const p=eio((t-da)/(db-da-0.3));const x2=lerp(60,520,p),y2=lerp(YL,YH,p);
+      h+=`<line x1="60" y1="${YL}" x2="${x2}" y2="${y2}" stroke="${INK}" stroke-width="4" stroke-dasharray="14 10" opacity=".8"/>`;
+      if(p<1)h+=`<g transform="translate(${x2} ${y2})"><path d="M0 0 L0 46 L12 34 L22 56 L30 52 L20 30 L36 30 Z" fill="#fff" stroke="#000" stroke-width="2"/></g>`;
+      LV.forEach(([r,lab,col],k)=>{const q=ease((t-(db-0.35+k*0.09))/0.35);if(q<=0)return;const y=fy(r);const hi=(k>=3&&t>=S(11))||(k===2&&t>=S(6)&&t<S(11));
+        h+=`<line x1="${900*(1-q)}" x2="900" y1="${y}" y2="${y}" stroke="${col}" stroke-width="${hi?6:3}" ${hi?'filter="url(#gw)"':''} opacity="${k<2?0.55:0.95}"/>`+txt(10,y-10,lab,col,hi?48:38,"start",q*(k<2?0.6:1))});}
+    // impuls + pullback
+    const im=poly(IMP,t);h+=`<path d="${im.d}" fill="none" stroke="${INK}" stroke-width="9" stroke-linejoin="round" stroke-linecap="round"/>`;
+    if(t>=S(6)){const pb=poly(PB,t);const up=t>=S(10);h+=`<path d="${pb.d}" fill="none" stroke="${up?GOLD:INK}" stroke-width="9" stroke-linejoin="round" stroke-linecap="round" ${up?'filter="url(#gw)"':''}/><circle cx="${pb.head[0]}" cy="${pb.head[1]}" r="15" fill="${up?GOLD:RED}" filter="url(#gw)"/>`}
+    else h+=`<circle cx="${im.head[0]}" cy="${im.head[1]}" r="15" fill="${GOLD}" filter="url(#gw)"/>`;
+    h+=txt(60,YL+60,"SWING LOW",MUTE,34,"middle",ease((t-S(5))/0.3))+txt(520,YH-30,"SWING HIGH",MUTE,34,"middle",ease((t-S(5))/0.3));
+    // trader masuk awal + SL di bawah 61.8
+    const sweep=W(9,0);
+    for(let i=0;i<6;i++){const x=600+i*50,a=W(6,4)+i*0.08;if(t<a)continue;
+      const y=fy(.618)-34;const s=back((t-a)/0.2);if(t<sweep){h+=`<g transform="translate(${x} ${y}) scale(${2-s})"><rect x="-22" y="-16" width="44" height="32" rx="8" fill="${GOLD}"/>${txt(0,9,"B","#0F1B33",26)}</g>`;
+        h+=`<g transform="translate(${x} ${fy(.618)+46})"><rect x="-22" y="-14" width="44" height="28" rx="7" fill="rgba(224,70,90,.25)" stroke="${RED}" stroke-width="3"/>${txt(0,8,"SL",RED,22)}</g>`}
+      else h+=burst(x,fy(.618)+46,sweep+i*0.04,t,8,RED,220,7,0.8)}
+    if(t>=sweep&&t<sweep+1.6)h+=txt(620,fy(.618)+130,"SL DISAPU",RED,64,"middle",1-cl((t-sweep-1.1)/0.5));
+    h+=ring(835,655,S(10),t,GOLD,240,0.7,12);
+    $("fsvg").innerHTML=h;
+    // nombor gergasi 78.6 / 90
+    const b7=$("big786"),b9=$("big90");if(t>=S(12)&&t<S(13)){show(b7,S(12),t,"fly");shine(b7.firstChild,t,1)}else b7.style.opacity=0;
+    if(t>=S(13)&&t<S(14)){show(b9,S(13),t,"fly");shine(b9.firstChild,t,1)}else b9.style.opacity=0;
+    const ze=$("zent");if(t>=S(15)&&t<S(16)){show(ze,S(15),t,"pop");shine(ze.firstChild,t,0.9)}else ze.style.opacity=0;
+    const ns=$("nostop");if(t>=S(16)&&t<S(17)){show(ns,S(16),t,"pop")}else ns.style.opacity=0;}
+  // ===== M1
+  if(scene("m1",S(17)+0.33,S(19)-0.02,t)){show("m1b",S(17)+0.35,t,"pop");$("mzone").style.boxShadow=`inset 0 0 ${80+40*Math.sin(t*5)}px rgba(231,206,124,.35)`;
+    let h=`<defs><filter id="gw2"><feGaussianBlur stdDeviation="8" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>`;
+    const c0=S(17)+0.5,cw=72;let y=60;const reds=[[60,90],[130,80],[200,100],[270,70],[340,110],[410,85],[480,95]];
+    reds.forEach(([x,dh],i)=>{const a=c0+i*0.18;if(t<a)return;const p=ease((t-a)/0.15);const o=y,c=y+dh*p;h+=`<line x1="${x}" x2="${x}" y1="${o-14}" y2="${c+16}" stroke="${RED}" stroke-width="6"/><rect x="${x-cw/2}" y="${o}" width="${cw}" height="${Math.max(4,c-o)}" rx="6" fill="${RED}"/>`;y=o+dh-28});
+    const eg=W(18,2)-0.15,last=[480,y+22-95];
+    if(t>=eg){const p=eio((t-eg)/0.55);const o=y+50,c=lerp(o,last[1]-60,p);h+=`<g filter="url(#gw2)"><line x1="560" x2="560" y1="${c-20}" y2="${o+18}" stroke="${GOLD}" stroke-width="8"/><rect x="${560-55}" y="${c}" width="110" height="${Math.max(6,o-c)}" rx="8" fill="${GOLD}"/></g>`;
+      if(p>=1){h+=`<rect x="440" y="${last[1]-70}" width="170" height="${o-last[1]+90}" rx="16" fill="none" stroke="${GOLD}" stroke-width="5" stroke-dasharray="14 10"/>`}
+      h+=ring(560,(o+c)/2,eg+0.55,t,GOLD,320,0.7,14)+burst(560,(o+c)/2,eg+0.55,t,22,GOLD,380,9,1.0);}
+    const en=E(18)-0.4;if(t>=en){const s=back((t-en)/0.26);h+=`<g transform="translate(720 ${y-120}) scale(${2-s}) translate(-720 ${-(y-120)})"><line x1="640" y1="${y+20}" x2="640" y2="${y-150}" stroke="${GOLD}" stroke-width="14" stroke-linecap="round"/><path d="M610 ${y-140} L640 ${y-190} L670 ${y-140} Z" fill="${GOLD}"/>${txt(780,y-80,"ENTRY",GOLD,96,"middle")}</g>`}
+    h+=txt(250,700,"ENGULFING",GOLD,96,"middle",ease((t-W(18,2)-0.4)/0.3));
+    $("msvg").innerHTML=h;}
+  // ===== RULE
+  if(scene("rule",S(19)-0.02,S(21)-0.02,t)){const r1=$("r1"),r2=$("r2");show(r1,S(19),t,"pop");show(r2,S(20),t,"pop");glitch(r2,t,[S(20)]);glitch(r1,t,[S(19)]);
+    r1.style.textDecoration="none";r1.style.opacity=t>=S(20)?0.35:r1.style.opacity;}
+  // ===== OUTRO
+  if(scene("fin",S(21)-0.02,99,t)){show("o0",S(21),t,"pop");$("o0").querySelector(".sw").style.left=`${lerp(-30,130,((t-S(21))*0.7)%1.4)}%`;
+    const q=ease((t-S(21)-0.15)/0.5);let h="";const yy=r=>40+r*360;
+    h+=`<rect x="0" y="${yy(.786)}" width="${900*q}" height="${yy(.9)-yy(.786)}" fill="${GOLD}" opacity=".3"/>`;
+    [[0,"0"],[.618,"61.8 PERANGKAP"],[.786,"78.6"],[.9,"90"],[1,"100"]].forEach(([r,l],k)=>{const col=r===.618?RED:(r===.786||r===.9?GOLD:MUTE);h+=`<line x1="0" x2="${900*q}" y1="${yy(r)}" y2="${yy(r)}" stroke="${col}" stroke-width="${col===GOLD?5:3}"/>`+txt(890,yy(r)-8,l,col,36,"end",q)});
+    h+=txt(250,yy(.843)+15,"ZON ENTRY","#0F1B33",40,"middle",q);
+    h+=`<path d="M40 ${yy(1)} L160 ${yy(.55)} L220 ${yy(.7)} L330 ${yy(0)} L420 ${yy(.4)} L470 ${yy(.3)} L560 ${yy(.84)} L640 ${yy(.2)}" fill="none" stroke="${INK}" stroke-width="6" stroke-linejoin="round" opacity="${q}" stroke-dasharray="1600" stroke-dashoffset="${1600*(1-q)}"/>`;
+    $("osvg").innerHTML=h;for(let i=0;i<3;i++)show("st"+i,S(21)+0.3+i*0.15,t);const sg=$("sig");show(sg,S(22),t,"pop");shine(sg.firstElementChild,t,0.8);}
+  // CAPTION (babak carta & M1)
+  let html="";
+  for(let i=4;i<=18;i++){if([12,13,15,16].includes(i))continue;const ph=P[i];if(t<ph.start||t>=ph.end+0.15)continue;
+    const ws=ph.words;let ci=0;ws.forEach((w,j)=>{if(t>=w[1])ci=j});const c0=Math.floor(ci/3)*3;
+    for(let j=c0;j<Math.min(ws.length,c0+3);j++){if(t<ws[j][1])break;const s=back((t-ws[j][1])/0.18);
+      html+=`<span class="${j===ci?"on":""}" style="transform:scale(${1.35-0.35*s})">${ws[j][0].replace(/[,?]/g,"").replace(/\.$/,"")}</span>`}}
+  $("cap").innerHTML=html;
+}
+window.build=build;window.render=render;
+</script></body></html>
