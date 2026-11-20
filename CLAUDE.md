@@ -21,7 +21,8 @@ Repo ini ialah "pejabat" staff Claude untuk Mr Maza (Asyraf), pengasas Trade Lik
 
 ## Suara
 - ElevenLabs `creative_generate_speech`, model `eleven_v4`, voice_id `1uDSnuWUOvbosqTWAzfW` (Shahrul, Melayu), generations_count 1. Satu panggilan untuk SEMUA skrip batch (pisah perenggan dengan baris kosong) supaya Asyraf download satu fail sahaja.
-- Sandbox tidak boleh muat turun dari ElevenLabs. Minta Asyraf download mp3 dan attach.
+- CARA UTAMA: ElevenLabs API terus (POST https://api.elevenlabs.io/v1/text-to-speech/<voice_id>). Header xi-api-key ditambah automatik oleh network secret environment Default; jangan cari, minta atau cetak key. Model: eleven_v4 jika ada dalam /v1/models, jika tidak eleven_v3.
+- SANDARAN: jika API gagal, guna connector ElevenLabs dan minta Asyraf download mp3 dan attach; catat kod HTTP dalam log.
 - Untuk video emosi boleh guna tag seperti [softly] [sad, slowly] [determined] [proudly]; buang tag dari scripts.txt yang dipakai split.py.
 - Semak kredit dengan `account_get_usage` sebelum generate (pelan Creator, ~121k sebulan; satu video ~650 hingga 900).
 
