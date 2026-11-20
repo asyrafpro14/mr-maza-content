@@ -52,3 +52,6 @@ Kemudian commit dan push (`git pull --rebase` dahulu jika push ditolak). General
 
 ## Brief strategi
 `strategi/brief.md` ditulis oleh Marketing Director setiap minggu. Content Creator dan Video Editor WAJIB membacanya sebelum memilih topik dan hook.
+
+## Arahan CEO
+`strategi/arahan-ceo.md` mengandungi arahan terkini Asyraf (dicatat oleh General Manager). Semua staff WAJIB membacanya bersama brief; arahan CEO mengatasi brief.
