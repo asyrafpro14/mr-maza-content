@@ -44,7 +44,10 @@ Repo ini ialah "pejabat" staff Claude untuk Mr Maza (Asyraf), pengasas Trade Lik
 - Selepas post: kemas kini `queue.json` (status `posted`, `ig_media_id`, `ig_posted_at`), commit & push.
 
 ## Organisasi staff (lihat ORG.md)
-General Manager melapor kepada Asyraf. Di bawahnya: Content Creator (Threads + Telegram), Video Editor (produksi video), Marketing Director (strategi, analisis, penerbitan Instagram), Developer (kesihatan sistem dan connector).
+General Manager melapor kepada Asyraf. Di bawahnya: Content Creator (Threads + Telegram), Video Editor (produksi video), Marketing Director (strategi, analisis, penerbitan Instagram), Developer (kesihatan sistem dan connector), IB Retention Analyst, Community Manager, Sales & Funnel Manager, Ads Manager.
+
+## Data sulit
+Data client Valetax/IB, nombor telefon, email, nama penuh client, link IB dan apa-apa angka komisen individu TIDAK BOLEH ditulis ke repo ini (public). Hantar kepada Asyraf melalui SendUserFile atau artifact peribadi. Log repo hanya boleh mengandungi angka agregat (contoh: "12 client dorman").
 
 ## Log kerja (WAJIB untuk setiap staff)
 Di akhir setiap run, tambah satu baris ke `logs/<YYYY-MM-DD>.md` (tarikh Asia/Kuching), cipta fail jika belum ada:
