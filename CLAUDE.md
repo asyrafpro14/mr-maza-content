@@ -41,3 +41,14 @@ Repo ini ialah "pejabat" staff Claude untuk Mr Maza (Asyraf), pengasas Trade Lik
 - SETIAP post awam perlukan "OK" daripada Asyraf dalam sesi itu. Tanpa OK, jangan post; laporkan apa yang sedia.
 - TikTok: tiada API post. Hantar fail video + caption kepada Asyraf (SendUserFile) untuk dia upload sendiri.
 - Selepas post: kemas kini `queue.json` (status `posted`, `ig_media_id`, `ig_posted_at`), commit & push.
+
+## Organisasi staff (lihat ORG.md)
+General Manager melapor kepada Asyraf. Di bawahnya: Content Creator (Threads + Telegram), Video Editor (produksi video), Marketing Director (strategi, analisis, penerbitan Instagram), Developer (kesihatan sistem dan connector).
+
+## Log kerja (WAJIB untuk setiap staff)
+Di akhir setiap run, tambah satu baris ke `logs/<YYYY-MM-DD>.md` (tarikh Asia/Kuching), cipta fail jika belum ada:
+`- HH:MM | <Nama staff> | <apa yang dibuat> | <status: siap / tunggu OK Asyraf / gagal: sebab>`
+Kemudian commit dan push (`git pull --rebase` dahulu jika push ditolak). General Manager membaca log ini untuk laporan.
+
+## Brief strategi
+`strategi/brief.md` ditulis oleh Marketing Director setiap minggu. Content Creator dan Video Editor WAJIB membacanya sebelum memilih topik dan hook.
