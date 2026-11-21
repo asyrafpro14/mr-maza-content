@@ -57,13 +57,19 @@ function build(tl){TL=tl;P=tl.p;
   iMsg=P.findIndex(p=>(V.msgRe||/^(Indicator|Pattern) bukan/).test(p.text));iFin=P.findIndex(p=>p.text==="Save,");
   $("hst").firstElementChild.innerHTML=V.stamp;$("sv3").innerHTML=V.title;if(V.sub)$("sv2").textContent=V.sub;$("o0pt").textContent=V.pill;$("m1").textContent=V.m1||P[iMsg].text.split(" ")[0].toUpperCase();if(V.m2)$("m2").firstElementChild.innerHTML=V.m2;if(V.m3)$("m3").innerHTML=V.m3;if(V.m4)$("m4").innerHTML=V.m4;
   $("steps").innerHTML=V.cheat.map((s,i)=>`<div class="step" id="st${i}"><b>${i+1}</b><span>${s}</span></div>`).join("");
-  MT=V.msgTimes?V.msgTimes():[S(iMsg),W(iMsg,1),S(iMsg+1),W(iMsg+1,5)];V.init();const ti=P[iSave+1].words.length-1;
+  MT=V.msgTimes?V.msgTimes():[S(iMsg),W(iMsg,1),S(iMsg+1),W(iMsg+1,5)];
+  if(V.bg&&!$("bgv")){const h=$("hook");h.insertAdjacentHTML("afterbegin",`<img id="bgv" style="position:absolute;left:0;top:0;width:1080px;height:1920px;object-fit:cover;transform-origin:50% 40%"><div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(5,8,15,.82) 0%,rgba(5,8,15,.15) 30%,rgba(5,8,15,.1) 60%,rgba(5,8,15,.85) 100%)"></div>`)}
+  if(V.chapters&&!$("chap")){let f="";NI.forEach((ni,k)=>{const x=S(ni)/tl.total*900;f+=`<g transform="translate(${x} 0)"><path d="M0 -10 V-46 L30 -36 L0 -26" fill="#E0465A" stroke="#E0465A" stroke-width="4"/><text x="0" y="40" fill="#9AA6BF" font-family="Pop" font-weight="700" font-size="24" text-anchor="middle" id="chl${k}">0${k+1}</text></g>`});
+    document.body.insertAdjacentHTML("beforeend",`<svg id="chap" viewBox="-20 -60 940 120" style="position:absolute;left:70px;top:1700px;width:940px;height:120px;overflow:visible"><line x1="0" x2="900" y1="0" y2="0" stroke="rgba(154,166,191,.35)" stroke-width="6" stroke-linecap="round"/><line id="chp" x1="0" x2="0" y1="0" y2="0" stroke="#E7CE7C" stroke-width="6" stroke-linecap="round"/>${f}<circle id="chd" r="14" cy="0" fill="#fff"/></svg>`)}
+  V.init();const ti=P[iSave+1].words.length-1;
   HITS=[...V.hits(),S(iSave),W(iSave+1,ti),...NI.map(S),MT[0],MT[1],S(iFin)];
   CUTS=[S(iSave),...NI.map(S),S(iMsg),S(iFin)];
   FL=[...V.fl(),[MT[1],"#E0465A",.35],[S(iFin),"#E7CE7C",.25]];
   return tl.total}
 function header(id,t0,t){const e=$(id);show(e,t0,t,"pop");shine(e,t,0.9);glitch(e,t,[t0])}
-function render(t){
+function render(t){let PR=null;
+  if(V.bg&&$("bgv")){const fr=Math.min(V.bg.n,1+Math.floor(t*V.bg.fps)),src=`${V.bg.dir}/b${String(fr).padStart(4,"0")}.jpg`,im=$("bgv");if(im.dataset.s!==src){im.dataset.s=src;im.src=src;PR=im.decode().catch(()=>{})}im.style.transform=`scale(${1.04+0.05*cl(t/S(iSave))})`}
+  if(V.chapters&&$("chap")){const x=cl(t/TL.total)*900;$("chd").setAttribute("cx",x);$("chp").setAttribute("x2",x);NI.forEach((ni,k)=>{$("chl"+k).setAttribute("fill",t>=S(ni)?"#E7CE7C":"#9AA6BF")});$("chap").style.opacity=t<S(iFin)-0.1?1:0}
   $("prog").firstElementChild.style.width=cl(t/TL.total)*100+"%";
   $("floor").style.backgroundPosition=`0 ${t*90}px`;
   document.querySelectorAll("#dust i").forEach((d,i)=>{const sp=10+rnd(i+5)*30;const x=(rnd(i)*1080+Math.sin(t*0.5+i)*30)%1080,y=((rnd(i+9)*1920-t*sp)%1920+1920)%1920;d.style.transform=`translate(${x}px,${y}px)`;d.style.opacity=0.25+0.5*rnd(i+2)*(0.6+0.4*Math.sin(t*2+i))});
@@ -96,5 +102,6 @@ function render(t){
     for(let j=c0;j<Math.min(ws.length,c0+3);j++){if(t<ws[j][1])break;const s=back((t-ws[j][1])/0.18);
       html+=`<span class="${j===ci?"on":""}" style="transform:scale(${1.35-0.35*s})">${ws[j][0].replace(/[,?]/g,"").replace(/\.$/,"")}</span>`}}
   $("cap").innerHTML=html;
+  return PR;
 }
 window.build=build;window.render=render;
