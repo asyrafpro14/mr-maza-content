@@ -22,14 +22,14 @@ Repo ini ialah "pejabat" staff Claude untuk Mr Maza (Asyraf), pengasas Trade Lik
 ## Suara
 - ElevenLabs `creative_generate_speech`, model `eleven_v4`, voice_id `1uDSnuWUOvbosqTWAzfW` (Shahrul, Melayu), generations_count 1. Satu panggilan untuk SEMUA skrip batch (pisah perenggan dengan baris kosong) supaya Asyraf download satu fail sahaja.
 - CARA UTAMA: ElevenLabs API terus (POST https://api.elevenlabs.io/v1/text-to-speech/<voice_id>). Header xi-api-key ditambah automatik oleh network secret environment Default; jangan cari, minta atau cetak key. Key hanya ada kebenaran Text to Speech (endpoint lain seperti /v1/models akan beri 401, itu normal). Model: eleven_v3 (sokong tag emosi); jika ralat model, eleven_multilingual_v2.
-- SANDARAN: jika API gagal, guna connector ElevenLabs dan minta Asyraf download mp3 dan attach; catat kod HTTP dalam log.
+- SANDARAN: jika API gagal, guna connector ElevenLabs, kemudian muat turun mp3 sendiri dari full_res_url (creative_get_generations). Hanya jika muat turun juga disekat, minta Asyraf download dan attach; catat kod HTTP dalam log.
 - Untuk video emosi boleh guna tag seperti [softly] [sad, slowly] [determined] [proudly]; buang tag dari scripts.txt yang dipakai split.py.
 - Semak kredit dengan `account_get_usage` sebelum generate (pelan Creator, ~121k sebulan; satu video ~650 hingga 900).
 
 ## Gaya video AI (diluluskan Asyraf 2026-11-21)
 - Standard baru untuk 2 hingga 3 video seminggu (pilih yang hook paling emosi): hook 5 saat guna klip AI realistik (ElevenLabs connector, `kling-2.5-turbo`, aspect_ratio 9:16, 5 s, ~2.1k kredit), watak rekaan lelaki Melayu ~30an (nyatakan ciri Melayu dengan jelas dalam prompt). Penutup boleh guna muka Asyraf (gambar rujukan di flow ElevenLabs) bila sudah tersedia.
 - Enjin: `V.bg={dir:"bg",fps:24,n:<bil frame>}` (frame `vN/bg/b0001.jpg` dari klip) dan `V.chapters=true` (bar bab 01 hingga 05). Contoh: `engine/indicator/v15ai.js`.
-- Klip dan mp3 dari ElevenLabs tidak boleh dimuat turun dari sesi (proxy 403): beri link generation, minta Asyraf download dan attach.
+- Klip dan mp3 dari ElevenLabs: sejak 2026-11-21 Network access environment Default membenarkan api.elevenlabs.io dan elevenlabsusercontent.com. Muat turun sendiri dengan curl dari full_res_url (creative_get_generations). Hanya jika masih 403, beri link generation dan minta Asyraf download (catat dalam log untuk Developer).
 - Bajet: jangan guna model video > 3k kredit satu klip tanpa OK Asyraf. Semak kredit dahulu (suara batch ~7k).
 - Setiap video dengan klip AI: `ai_label: true` dalam queue; penerbit WAJIB tanda label "AI info" di Instagram.
 
