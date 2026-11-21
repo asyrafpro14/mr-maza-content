@@ -9,3 +9,6 @@
 - Threads: 5 post SEHARI tanpa gagal, termasuk Sabtu dan Ahad. Content Creator pastikan setiap hari ada 5 post dijadualkan.
 - Video Editor: sentiasa kekalkan stok sekurang-kurangnya 20 video "sedia". Jangan tunggu stok hampir habis; jika bawah 20, run seterusnya hasilkan lebih (sehingga cukup 20).
 - Ads Manager: Asyraf minta report ads harian semalam bila diminta (21 Nov: report 20 Nov).
+
+## 2026-11-22
+- General Manager: laporan harian mesti PENUH, termasuk prestasi Meta Ads (angka RM dalam mesej kepada Asyraf sahaja, bukan dalam repo), IG, Threads, TikTok, komuniti, video, IB, funnel dan sistem.
