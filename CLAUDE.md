@@ -26,6 +26,13 @@ Repo ini ialah "pejabat" staff Claude untuk Mr Maza (Asyraf), pengasas Trade Lik
 - Untuk video emosi boleh guna tag seperti [softly] [sad, slowly] [determined] [proudly]; buang tag dari scripts.txt yang dipakai split.py.
 - Semak kredit dengan `account_get_usage` sebelum generate (pelan Creator, ~121k sebulan; satu video ~650 hingga 900).
 
+## Gaya video AI (diluluskan Asyraf 2026-11-21)
+- Standard baru untuk 2 hingga 3 video seminggu (pilih yang hook paling emosi): hook 5 saat guna klip AI realistik (ElevenLabs connector, `kling-2.5-turbo`, aspect_ratio 9:16, 5 s, ~2.1k kredit), watak rekaan lelaki Melayu ~30an (nyatakan ciri Melayu dengan jelas dalam prompt). Penutup boleh guna muka Asyraf (gambar rujukan di flow ElevenLabs) bila sudah tersedia.
+- Enjin: `V.bg={dir:"bg",fps:24,n:<bil frame>}` (frame `vN/bg/b0001.jpg` dari klip) dan `V.chapters=true` (bar bab 01 hingga 05). Contoh: `engine/indicator/v15ai.js`.
+- Klip dan mp3 dari ElevenLabs tidak boleh dimuat turun dari sesi (proxy 403): beri link generation, minta Asyraf download dan attach.
+- Bajet: jangan guna model video > 3k kredit satu klip tanpa OK Asyraf. Semak kredit dahulu (suara batch ~7k).
+- Setiap video dengan klip AI: `ai_label: true` dalam queue; penerbit WAJIB tanda label "AI info" di Instagram.
+
 ## Aliran render (ringkas)
 1. `scripts.txt` (satu perenggan setiap video) → `python3 split.py <mp3>` → `vN/tl.json`, `vN/vo.wav`.
 2. Tulis/ubah `vN.js`, `python3 assemble.py N`, render frame semakan (`node vN/render.js frames t1 t2 ...`), buat contact sheet, betulkan pertindihan.
