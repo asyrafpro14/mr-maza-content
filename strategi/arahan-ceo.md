@@ -12,3 +12,7 @@
 
 ## 2026-11-22
 - General Manager: laporan harian mesti PENUH, termasuk prestasi Meta Ads (angka RM dalam mesej kepada Asyraf sahaja, bukan dalam repo), IG, Threads, TikTok, komuniti, video, IB, funnel dan sistem.
+- Kempen webinar SEDANG BERJALAN: "Webinar Blueprint Top Trader" 3 hari, 26 hingga 28 Nov 2026, 9:00 malam hingga 12:00 malam (Zoom). Pakej di landing page: General RM49, Diamond RM97, VIP RM129. Semua iklan Meta (akaun 1258) menghala ke www.tradelikemrmaza.com untuk webinar ini.
+  - Sales & Funnel Manager: kit kempen untuk 4 hari terakhir (peringatan hadir H-1/H-0, follow-up, tawaran FTC selepas webinar). Kemas kini strategi/kempen.md.
+  - Ads Manager: kaji semula copy iklan dan landing page dari sudut pematuhan (buang angka untung, tambah ayat risiko, kuota seat yang konsisten) dan cadang agihan bajet untuk baki kempen. Hanya cadangan; Asyraf yang ubah iklan.
+  - Content Creator, Video Editor, Marketing Director (IG): selitkan ajakan webinar dalam kandungan organik minggu ini (tanpa janji untung).
