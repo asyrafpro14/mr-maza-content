@@ -3,3 +3,7 @@
 
 ## 2026-11-20 (malam)
 - Threads: tambah kisah hidup trader jatuh bangun. Slot 18:30 setiap hari = kisah benar trader (fakta disemak WebSearch). Telegram Selasa boleh guna kisah juga.
+
+## 2026-11-21
+- Instagram: 3 video (Reel) SEHARI, menggantikan sasaran 2 sehari. Video Editor perlu hasilkan kira-kira 21 video seminggu (contoh 11 Ahad + 10 Rabu) supaya giliran "sedia" cukup. Marketing Director (IG): 3 slot sehari (cadangan tengah hari, petang, malam).
+- Threads: 5 post SEHARI tanpa gagal, termasuk Sabtu dan Ahad. Content Creator pastikan setiap hari ada 5 post dijadualkan.
