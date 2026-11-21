@@ -16,3 +16,18 @@
   - Sales & Funnel Manager: kit kempen untuk 4 hari terakhir (peringatan hadir H-1/H-0, follow-up, tawaran FTC selepas webinar). Kemas kini strategi/kempen.md.
   - Ads Manager: kaji semula copy iklan dan landing page dari sudut pematuhan (buang angka untung, tambah ayat risiko, kuota seat yang konsisten) dan cadang agihan bajet untuk baki kempen. Hanya cadangan; Asyraf yang ubah iklan.
   - Content Creator, Video Editor, Marketing Director (IG): selitkan ajakan webinar dalam kandungan organik minggu ini (tanpa janji untung).
+
+## 2026-11-22 (arahan Asyraf: CTA webinar)
+- MULAI 23 NOV hingga webinar tamat (28 Nov): SEMUA kandungan yang dipost (Threads, Reel IG, TikTok, Telegram) WAJIB ada CTA webinar "Blueprint Top Trader" (26 hingga 28 Nov, 9 malam, Zoom, link di bio / tradelikemrmaza.com).
+- JANGAN LARI DARI TOPIK YANG DIAJAR. Topik kandungan dan CTA mesti sambung terus kepada silibus webinar:
+  - Hari 1: Fundamental analysis dan sentimen untuk tentukan direction market.
+  - Hari 2: OHLC storyline, SNR/key level confirmation, setup dan confirmation (continuation, stopper, retracement), power of opening candle.
+  - Hari 3: Confluence, strategi, 1 SOP lengkap, trading plan, entry dan exit (top-down H4 > H1 > M30, Fibo expansion untuk TP, layering ikut strategi).
+  - Contoh CTA: "Ni baru satu bahagian storyline. Full SOP aku ajar dalam Webinar Blueprint Top Trader 26 hingga 28 Nov. Link di bio."
+  - Elak topik yang tiada kaitan dengan silibus (contoh indicator yang tidak diajar) sebagai post utama minggu ini; jika video indicator sedia dipost, CTA mesti kaitkan dengan "indicator cuma pengesahan, storyline dan SOP diajar dalam webinar".
+- Peraturan pematuhan kekal: tiada janji untung, tiada angka profit/testimoni income, tiada signal, ada "Pendidikan sahaja. Bukan nasihat kewangan." SRR/RSS dan Kotak Hitam masih perlukan pengesahan Asyraf.
+- Content Creator: kemas kini post Threads yang SUDAH dijadualkan untuk 23 hingga 28 Nov supaya ada CTA webinar (selepas OK Asyraf), dan isi slot kosong dengan topik silibus.
+- Marketing Director (IG): tambah CTA webinar dalam caption setiap Reel sebelum minta OK.
+- Video Editor: produksi Ahad ini utamakan topik silibus (storyline, OHLC, SNR confirmation, top-down, Fibo expansion TP, SOP) dengan penutup CTA webinar.
+- Sales & Funnel Manager: dijalankan awal (22 Nov). Sediakan juga skrip BLAST kepada database sedia ada (WhatsApp/email) untuk team Asyraf hantar; Zara tidak menghantar sendiri.
+- Ads Manager: dijalankan sekarang (22 Nov). Siapkan semua bahan: copy baru patuh polisi, senarai pembetulan landing page, agihan bajet 4 hari terakhir, iklan peringatan retarget.
