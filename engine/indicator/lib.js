@@ -50,17 +50,17 @@ function peaks(arr,a,b,w=3,lo=false){const r=[];for(let i=a+w;i<b-w;i++){let ok=
 function tAt(i,C,a0,a1){return a0+(i+1-C.a)/(C.b-C.a)*(a1-a0)}
 
 // ===== rangka video =====
-let NI,iSave,iMsg,iFin,X0;
+let NI,iSave,iMsg,iFin,X0,MT;
 function build(tl){TL=tl;P=tl.p;
   let dh="";for(let i=0;i<46;i++){const s=2+rnd(i)*5;dh+=`<i style="width:${s}px;height:${s}px"></i>`}$("dust").innerHTML=dh;
   iSave=P.findIndex(p=>/^Save video/.test(p.text));NI=["Satu.","Dua.","Tiga.","Empat.","Lima."].map(s=>P.findIndex(p=>p.text===s));
-  iMsg=P.findIndex(p=>/^Indicator bukan/.test(p.text));iFin=P.findIndex(p=>p.text==="Save,");
-  $("hst").firstElementChild.innerHTML=V.stamp;$("sv3").innerHTML=V.title;if(V.sub)$("sv2").textContent=V.sub;$("o0pt").textContent=V.pill;
+  iMsg=P.findIndex(p=>(V.msgRe||/^(Indicator|Pattern) bukan/).test(p.text));iFin=P.findIndex(p=>p.text==="Save,");
+  $("hst").firstElementChild.innerHTML=V.stamp;$("sv3").innerHTML=V.title;if(V.sub)$("sv2").textContent=V.sub;$("o0pt").textContent=V.pill;$("m1").textContent=V.m1||P[iMsg].text.split(" ")[0].toUpperCase();if(V.m2)$("m2").firstElementChild.innerHTML=V.m2;if(V.m3)$("m3").innerHTML=V.m3;if(V.m4)$("m4").innerHTML=V.m4;
   $("steps").innerHTML=V.cheat.map((s,i)=>`<div class="step" id="st${i}"><b>${i+1}</b><span>${s}</span></div>`).join("");
-  V.init();const ti=P[iSave+1].words.length-1;
-  HITS=[...V.hits(),S(iSave),W(iSave+1,ti),...NI.map(S),S(iMsg),W(iMsg,1),S(iFin)];
+  MT=V.msgTimes?V.msgTimes():[S(iMsg),W(iMsg,1),S(iMsg+1),W(iMsg+1,5)];V.init();const ti=P[iSave+1].words.length-1;
+  HITS=[...V.hits(),S(iSave),W(iSave+1,ti),...NI.map(S),MT[0],MT[1],S(iFin)];
   CUTS=[S(iSave),...NI.map(S),S(iMsg),S(iFin)];
-  FL=[...V.fl(),[W(iMsg,1),"#E0465A",.35],[S(iFin),"#E7CE7C",.25]];
+  FL=[...V.fl(),[MT[1],"#E0465A",.35],[S(iFin),"#E7CE7C",.25]];
   return tl.total}
 function header(id,t0,t){const e=$(id);show(e,t0,t,"pop");shine(e,t,0.9);glitch(e,t,[t0])}
 function render(t){
@@ -82,10 +82,10 @@ function render(t){
   if(scene("sv",S(iSave)-0.02,S(NI[0])-0.02,t)){show("sv1",S(iSave),t,"pop");$("sv1").querySelector(".sw").style.left=`${lerp(-30,130,cl((t-S(iSave)-0.2)/0.6))}%`;
     show("sv2",S(iSave+1),t,"pop");const s3=$("sv3"),tt=W(iSave+1,P[iSave+1].words.length-1);show(s3,tt,t,"fly");shine(s3,t,0.8);}
   // LANGKAH
-  for(let k=0;k<5;k++){const a=S(NI[k]),b=k<4?S(NI[k+1]):S(iMsg);if(scene("s"+(k+1),a-0.02,b-0.02,t)){header("n"+(k+1),a,t);$("s"+(k+1)+"svg").innerHTML=GW+V.steps[k](t,a,b)}}
+  for(let k=0;k<5;k++){const a=S(NI[k]),b=k<4?S(NI[k+1]):MT[0];if(scene("s"+(k+1),a-0.02,b-0.02,t)){header("n"+(k+1),a,t);$("s"+(k+1)+"svg").innerHTML=GW+V.steps[k](t,a,b)}}
   // MESEJ
-  if(scene("msg",S(iMsg)-0.02,S(iFin)-0.02,t)){show("m1",S(iMsg),t,"pop");glitch($("m1"),t,[S(iMsg)]);const m2=$("m2");show(m2,W(iMsg,1),t,"pop");glitch(m2.firstElementChild,t,[W(iMsg,1)]);
-    show("m3",S(iMsg+1),t);const m4=$("m4");show(m4,W(iMsg+1,5),t,"fly");shine(m4,t,0.8);}
+  if(scene("msg",MT[0]-0.02,S(iFin)-0.02,t)){show("m1",MT[0],t,"pop");glitch($("m1"),t,[MT[0]]);const m2=$("m2");show(m2,MT[1],t,"pop");glitch(m2.firstElementChild,t,[MT[1]]);
+    show("m3",MT[2],t);const m4=$("m4");show(m4,MT[3],t,"fly");shine(m4,t,0.8);}
   // OUTRO
   if(scene("fin",S(iFin)-0.02,99,t)){show("o0",S(iFin),t,"pop");$("o0").querySelector(".sw").style.left=`${lerp(-30,130,((t-S(iFin))*0.7)%1.4)}%`;
     for(let i=0;i<5;i++)show("st"+i,S(iFin)+0.15+i*0.12,t);const sg=$("sig");show(sg,S(iFin+1),t,"pop");shine(sg.firstElementChild,t,0.8);show("disc",S(iFin+1)+0.3,t);}
