@@ -31,3 +31,9 @@
 - Video Editor: produksi Ahad ini utamakan topik silibus (storyline, OHLC, SNR confirmation, top-down, Fibo expansion TP, SOP) dengan penutup CTA webinar.
 - Sales & Funnel Manager: dijalankan awal (22 Nov). Sediakan juga skrip BLAST kepada database sedia ada (WhatsApp/email) untuk team Asyraf hantar; Zara tidak menghantar sendiri.
 - Ads Manager: dijalankan sekarang (22 Nov). Siapkan semua bahan: copy baru patuh polisi, senarai pembetulan landing page, agihan bajet 4 hari terakhir, iklan peringatan retarget.
+
+## 2026-11-22 (petang: gaya visual video trading)
+- Video trading Mr Maza TIDAK BOLEH guna visual 3D. Guna gaya editing chart sebenar seperti video sebelum ini (enjin indicator `engine/indicator/`), sebab chart mesti nampak macam chart yang trader tengok masa trade.
+- Gaya 3D low-poly hanya untuk video sirah El Zahra Travel, bukan untuk Mr Maza.
+- Empat video 3D Mr Maza bertarikh 22 Nov (breakout palsu, storyline OHLC, top-down, Fibo expansion) DIBATALKAN dan JANGAN dipost. Marketing Director (IG): jangan ambil keempat-empat video ini walaupun muncul dalam giliran.
+- Video Editor (Rizal): boleh render semula topik yang sama dalam gaya chart asal.
