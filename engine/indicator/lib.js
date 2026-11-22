@@ -55,7 +55,7 @@ function build(tl){TL=tl;P=tl.p;
   let dh="";for(let i=0;i<46;i++){const s=2+rnd(i)*5;dh+=`<i style="width:${s}px;height:${s}px"></i>`}$("dust").innerHTML=dh;
   iSave=P.findIndex(p=>/^Save video/.test(p.text));NI=["Satu.","Dua.","Tiga.","Empat.","Lima."].map(s=>P.findIndex(p=>p.text===s));
   iMsg=P.findIndex(p=>(V.msgRe||/^(Indicator|Pattern) bukan/).test(p.text));iFin=P.findIndex(p=>p.text==="Save,");if(iFin<0)iFin=V.finIdx!=null?V.finIdx:P.findIndex((p,i)=>i>iMsg&&/Webinar/.test(p.text));iSig=P.findIndex((p,i)=>i>iFin&&/^Follow Mr Maza/.test(p.text));if(iSig<0||P[iFin].text==="Save,")iSig=iFin+1;iQ=P.findIndex((p,i)=>i>iFin&&i<iSig&&/\?$/.test(p.text));
-  if(V.cta){$("cta").style.display="block";$("ctaq").style.display="block";$("ctaq").firstElementChild.textContent=V.q||"KOMEN DI BAWAH";$("sig").style.top="1450px";$("disc").style.top="1560px"}
+  if(V.cta){$("cta").style.display="block";$("ctaq").style.display="block";$("ctaq").firstElementChild.textContent=V.q||"KOMEN DI BAWAH";$("sig").style.top="1565px";$("disc").style.top="1685px"}
   $("hst").firstElementChild.innerHTML=V.stamp;$("sv3").innerHTML=V.title;if(V.sub)$("sv2").textContent=V.sub;$("o0pt").textContent=V.pill;$("m1").textContent=V.m1||P[iMsg].text.split(" ")[0].toUpperCase();if(V.m2)$("m2").firstElementChild.innerHTML=V.m2;if(V.m3)$("m3").innerHTML=V.m3;if(V.m4)$("m4").innerHTML=V.m4;
   $("steps").innerHTML=V.cheat.map((s,i)=>`<div class="step" id="st${i}"><b>${i+1}</b><span>${s}</span></div>`).join("");
   MT=V.msgTimes?V.msgTimes():[S(iMsg),W(iMsg,1),S(iMsg+1),W(iMsg+1,5)];
