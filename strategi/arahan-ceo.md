@@ -37,3 +37,12 @@
 - Gaya 3D low-poly hanya untuk video sirah El Zahra Travel, bukan untuk Mr Maza.
 - Empat video 3D Mr Maza bertarikh 22 Nov (breakout palsu, storyline OHLC, top-down, Fibo expansion) DIBATALKAN dan JANGAN dipost. Marketing Director (IG): jangan ambil keempat-empat video ini walaupun muncul dalam giliran.
 - Video Editor (Rizal): boleh render semula topik yang sama dalam gaya chart asal.
+
+## 2026-11-24 (11:05): Post terus tanpa tunggu OK
+- Asyraf: "Setiap post, post terus tanpa tunggu ok dari aq." Skop: SEMUA platform (Threads, Telegram, Reel Instagram).
+- Arahan ini MENGATASI peraturan "SETIAP post awam perlukan OK daripada Asyraf" dalam CLAUDE.md dan langkah "tunggu OK" dalam prompt task.
+- Content Creator (Nadia): Gold Hari Ni dan batch Threads terus dijadualkan dengan publish_at (bukan plan_at) pada masa slot. Fail Telegram terus dihantar kepada Asyraf untuk forward ke bot; tiada lagi tunggu OK.
+- Marketing Director IG (Farah): setiap slot terus post video "sedia" pertama yang sesuai melalui create_video_post, kemudian maklumkan Asyraf apa yang keluar. Video ai_label true: tetap ingatkan Asyraf tanda "AI info".
+- Video Editor (Rizal): skrip terus ke suara dan render tanpa tunggu OK skrip.
+- Semakan kendiri WAJIB kekal sebelum post: tiada janji untung, signal, entry/SL/TP, em dash; ada "Pendidikan sahaja, bukan nasihat kewangan."; fakta disemak. Jika ragu tentang satu post, tahan post itu sahaja dan laporkan.
+- Kekal perlukan OK Asyraf: SRR/RSS, Kotak Hitam, setup tandatangan; balasan komen dan hide komen (Aina); perubahan iklan/bajet (Kamal).
