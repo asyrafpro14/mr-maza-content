@@ -46,3 +46,15 @@
 - Video Editor (Rizal): skrip terus ke suara dan render tanpa tunggu OK skrip.
 - Semakan kendiri WAJIB kekal sebelum post: tiada janji untung, signal, entry/SL/TP, em dash; ada "Pendidikan sahaja, bukan nasihat kewangan."; fakta disemak. Jika ragu tentang satu post, tahan post itu sahaja dan laporkan.
 - Kekal perlukan OK Asyraf: SRR/RSS, Kotak Hitam, setup tandatangan; balasan komen dan hide komen (Aina); perubahan iklan/bajet (Kamal).
+
+## 2026-11-24 (petang): Baiki engagement Threads (diluluskan Asyraf)
+- Punca engagement Threads turun (kajian Aina, kualitatif kerana tiada metrik): post naik dari 1 ke 5 sehari, gaya beralih ke cheat sheet panjang nada cikgu dengan "Save", dan CTA webinar dalam setiap post sejak 23 Nov.
+- Arahan ini MENGATASI "Threads 5 post SEHARI" (21 Nov) dan "SEMUA kandungan WAJIB CTA webinar" (22 Nov) untuk THREADS sahaja, berkuat kuasa 25 Nov hingga 28 Nov (nilai semula selepas webinar).
+- Content Creator (Nadia):
+  1. Threads 3 post sehari (cadangan 09:00 Gold Hari Ni, 12:30, 20:30). Draf 25 hingga 28 Nov yang sudah dijadualkan: kekalkan 3 terbaik setiap hari, yang lain tukar ke draf biasa (jangan padam).
+  2. Format: 3 hingga 5 baris, mula dari sakit trader, tutup dengan SATU soalan yang dijawab sepatah ("Kau yang mana, 1, 2 atau 3?"). Elak cheat sheet panjang dan formula; itu untuk Reel/IG.
+  3. CTA webinar hanya dalam 1 daripada 3 post sehari. Post lain tanpa CTA dalam badan post.
+  4. 1 post sehari dengan gambar chart XAUUSD bertanda (bukan signal, tiada entry/SL/TP).
+- Asyraf/team: balas reply Threads dalam 30 hingga 60 minit pertama selepas post.
+- Peraturan pematuhan kekal (tiada janji untung, signal; "Pendidikan sahaja. Bukan nasihat kewangan." dalam post CTA).
+- Developer/Asyraf: sambung akaun Threads @asyraf_maza di Windsor.ai supaya Marketing Director boleh ukur views/reply setiap post.
