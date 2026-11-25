@@ -58,3 +58,9 @@
 - Asyraf/team: balas reply Threads dalam 30 hingga 60 minit pertama selepas post.
 - Peraturan pematuhan kekal (tiada janji untung, signal; "Pendidikan sahaja. Bukan nasihat kewangan." dalam post CTA).
 - Developer/Asyraf: sambung akaun Threads @asyraf_maza di Windsor.ai supaya Marketing Director boleh ukur views/reply setiap post.
+
+## 2026-11-25 (11:00): mp3 batch 22 Nov sudah diterima
+- Asyraf attach mp3 suara untuk 11 skrip batch 22 Nov (eleven_v4, voice Shahrul). Disimpan dalam repo:
+  - `skrip/2026-11-22-batchA.mp3` (344 s): v16 Breakout Palsu, v17 Storyline OHLC, v18 Pengesahan SNR, v19 Top-Down, v20 Fibo Expansion, v21 Arah Gold Fundamental.
+  - `skrip/2026-11-22-batchB.mp3` (288 s): v22 Confluence, v23 Trading Plan, v24 Win Rate vs RR, v25 Soros, v26 Seykota (ada tag emosi dalam suara; buang dari scripts.txt).
+- Video Editor (Rizal): run Rabu 25 Nov guna dua fail ini (split.py / split_keep.py ikut skrip/2026-11-22-batch.md), JANGAN jana suara semula. v16, v17, v19, v20 mesti dirender dalam gaya chart asal (bukan 3D, rujuk arahan 22 Nov petang). Utamakan video yang ada CTA webinar 26 hingga 28 Nov supaya sempat keluar.
