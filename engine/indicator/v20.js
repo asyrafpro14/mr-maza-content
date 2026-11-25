@@ -30,7 +30,7 @@ const V={stamp:"TERLEPAS!",title:"FIBO<br>EXPANSION",sub:"Cara betul guna",pill:
  steps:[
   (t,a,b)=>{const D=F5,k=prog(t,a,a+0.8,FC.i+2),ex=t>=S(7);const C=chart(D,k,{a:0,b:ex?46:28,H:640,y0:170,extra:ex?[FX(1.618)+0.5]:[]});let h=C.svg;
    const xA=C.X(FA.i),xB=C.X(FB.i);
-   if(t>=W(6,1)){[0.382,0.5,0.618].forEach((r,i)=>{h+=flev(C,FRT(r),CY,(r*100).toFixed(1)+"%",1,W(6,1)+i*0.12,t,xA)});}
+   if(t>=W(6,1)&&t<S(7)){[0.382,0.5,0.618].forEach((r,i)=>{h+=flev(C,FRT(r),CY,(r*100).toFixed(1)+"%",1,W(6,1)+i*0.12,t,xA)});}
    if(t>=S(7)){FR.forEach((r,i)=>{h+=flev(C,FX(r),GOLD,(r*100).toFixed(1)+"%",1,W(7,1)+i*0.15,t,C.X(FC.i))});
     const q=ease((t-W(7,3))/0.6);if(t>=W(7,3))h+=`<g opacity="${q}">`+arrow(C.X(FC.i)+60,C.Y(FC.v),-1,(C.Y(FC.v)-C.Y(FX(1.618)))*q,GOLD,1,8)+`</g>`+popc(450,40,"EXPANSION: UNJURAN",GOLD,"#0F1B33",54,W(7,1),t)}
    else h+=popc(450,40,"RETRACEMENT: TARIKAN BALIK",CY,"#0F1B33",48,a,t);
