@@ -64,3 +64,10 @@
   - `skrip/2026-11-22-batchA.mp3` (344 s): v16 Breakout Palsu, v17 Storyline OHLC, v18 Pengesahan SNR, v19 Top-Down, v20 Fibo Expansion, v21 Arah Gold Fundamental.
   - `skrip/2026-11-22-batchB.mp3` (288 s): v22 Confluence, v23 Trading Plan, v24 Win Rate vs RR, v25 Soros, v26 Seykota (ada tag emosi dalam suara; buang dari scripts.txt).
 - Video Editor (Rizal): run Rabu 25 Nov guna dua fail ini (split.py / split_keep.py ikut skrip/2026-11-22-batch.md), JANGAN jana suara semula. v16, v17, v19, v20 mesti dirender dalam gaya chart asal (bukan 3D, rujuk arahan 22 Nov petang). Utamakan video yang ada CTA webinar 26 hingga 28 Nov supaya sempat keluar.
+
+## 2026-11-28: Kempen Grand Finale Disember
+- Semua staff baca strategi/grand-finale-video.md. Pelan itu mengatasi brief.md untuk Disember.
+- Video Editor (Rizal), run Ahad 29 Nov: (a) potong segmen CTA webinar Nov dari 11 video POT, simpan sebagai <slug>-seed.mp4; (b) buat 10 video BARU batch 1 ikut senarai "10 video pertama". Tiada CTA jualan, penutup "Follow Mr Maza".
+- Run Rabu 2 Dis: batch 2. Run Ahad 6 Dis: batch 3.
+- Ads Manager (Kamal): iklan seeding mula 1 Dis guna video SA + POT + batch 1; tiada ajakan beli sehingga 21 Dis.
+- Gaya video: chart sebenar + suara, tiada 3D (sehingga Asyraf ubah).
